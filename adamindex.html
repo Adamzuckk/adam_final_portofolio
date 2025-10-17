@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Ahmed — Portfolio</title>
+  <style>
+    :root{
+      --barca-blue: #004D98;
+      --barca-red: #A50044;
+      --barca-yellow: #FFD100;
+      --white: #FFFFFF;
+      --bg-grad-1: var(--barca-blue);
+      --bg-grad-2: var(--barca-red);
+      --max-width: 1000px;
+      --font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family: var(--font-family);
+      color: var(--white);
+      min-height:100vh;
+      line-height:1.5;
+      background: linear-gradient(135deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      scroll-behavior: smooth;
+    }
+
+    /* header */
+    .site-header{
+      padding:18px 24px;
+      display:flex;
+      justify-content:flex-end;
+      background: rgba(0,0,0,0.15);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .nav-link{
+      color:var(--white);
+      margin-left:18px;
+      text-decoration:none;
+      font-weight:600;
+      transition:opacity 0.2s ease;
+    }
+    .nav-link:hover{opacity:0.8;}
+
+    /* sections */
+    .section{
+      padding:60px 20px;
+      display:flex;
+      justify-content:center;
+    }
+    .hero{
+      min-height:80vh;
+      align-items:center;
+    }
+    .hero-content{
+      max-width: var(--max-width);
+      text-align:left;
+    }
+
+    /* big goal (yellow) */
+    .goal{
+      color: var(--barca-yellow);
+      font-size: clamp(20px, 4vw, 34px);
+      margin-bottom:12px;
+      font-weight:800;
+      letter-spacing:0.3px;
+    }
+
+    /* intro paragraph */
+    .intro{
+      color: var(--white);
+      margin-bottom:18px;
+      opacity:0.95;
+    }
+
+    /* sub headline */
+    .headline{
+      color:var(--barca-yellow);
+      margin-top:18px;
+      margin-bottom:8px;
+    }
+
+    /* skills */
+    .skills-section .container{
+      max-width: var(--max-width);
+      width:100%;
+    }
+    .section-title{
+      color:var(--barca-yellow);
+      margin-bottom:12px;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .languages{
+      display:flex;
+      gap:16px;
+      margin-bottom:20px;
+      flex-wrap:wrap;
+    }
+    .lang-card{
+      background: rgba(255,255,255,0.06);
+      padding:12px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:140px;
+      transition:transform 0.2s ease;
+    }
+    .lang-card:hover{
+      transform:translateY(-4px);
+    }
+    .lang-card img{
+      width:42px;
+      height:42px;
+      object-fit:contain;
+    }
+    .lang-card span{color:var(--white);font-weight:600;}
+
+    /* certificates list */
+    .cert-list{
+      list-style: none;
+      margin-bottom:20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .cert-list li{
+      background: rgba(255,255,255,0.06);
+      padding:8px 12px;
+      border-radius:8px;
+      transition:background 0.2s;
+    }
+    .cert-list li:hover{background: rgba(255,255,255,0.12);}
+
+    /* logos row */
+    .faang-logos{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-top:14px;
+      flex-wrap:wrap;
+    }
+    .faang-logos img{
+      width:72px;
+      height:auto;
+      filter:brightness(0) invert(1);
+      background: rgba(255,255,255,0.06);
+      padding:8px;
+      border-radius:8px;
+      transition:transform 0.2s;
+    }
+    .faang-logos img:hover{
+      transform:scale(1.1);
+    }
+
+    /* footer */
+    .site-footer{
+      padding:20px;
+      text-align:center;
+      font-size:14px;
+      background: rgba(0,0,0,0.15);
+      margin-top:30px;
+    }
+
+    /* responsive */
+    @media (max-width:600px){
+      .lang-card{min-width:110px;}
+      .goal{font-size:20px;}
+      .faang-logos img{width:56px;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills & Certificates</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO / ABOUT (Page 1) -->
+    <section id="about" class="section hero">
+      <div class="hero-content">
+        <h1 class="goal">My goal is to become a bug hunter and a software engineer.</h1>
+        <p class="intro">
+          Hello, I'm Adam Ahmed — a computer science student with a big passion. Being here is part of a long-held dream and, God willing, I will achieve many things.
+        </p>
+
+        <div class="short-info">
+          <h2 class="headline">About Me</h2>
+          <p>Computer Science student. Passionate about software engineering, security and algorithms (currently learning DSA).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & CERTIFICATES (Page 2) -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title">Skills & Languages</h2>
+
+        <div class="languages">
+          <div class="lang-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+            <span>C++</span>
+          </div>
+          <div class="lang-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            <span>Python</span>
+          </div>
+          <div class="lang-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Golang" />
+            <span>Golang</span>
+          </div>
+        </div>
+
+        <h2 class="section-title">Certificates</h2>
+        <ul class="cert-list">
+          <li>CCNA</li>
+          <li>CS50</li>
+          <li>Linux+</li>
+          <li>Security+</li>
+          <li>Red Teaming</li>
+          <li>RJPTv2</li>
+          <li>OSCP</li>
+        </ul>
+
+        <h2 class="section-title">Career Ambition</h2>
+        <p>I aim to be a Software Engineer at a FAANG company and I'm also active in security (I participate in ECPC). Currently learning DSA. I want to be a bug hunter and a software engineer.</p>
+
+        <div class="faang-logos">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" title="Google" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" title="Apple" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Meta" title="Meta" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" title="Amazon" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" title="Netflix" />
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© Adam Ahmed — Computer Science Student</p>
+  </footer>
+
+  <script>
+    // smooth scroll
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if(!target) return;
+        target.scrollIntoView({behavior: 'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
