@@ -28,6 +28,37 @@
       scroll-behavior: smooth;
     }
 
+    /* hero name section */
+    .hero-name-wrapper {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .hero-name {
+      color: var(--barca-yellow);
+      font-size: clamp(32px, 7vw, 68px);
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      animation: fadeIn 1.8s ease forwards;
+      opacity: 0;
+    }
+
+    .subtitle {
+      color: var(--barca-yellow);
+      font-size: clamp(16px, 3vw, 22px);
+      margin-top: 10px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      opacity: 0.9;
+      animation: fadeIn 2.2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
     /* header */
     .site-header{
       padding:18px 24px;
@@ -150,11 +181,10 @@
     .faang-logos img{
       width:72px;
       height:auto;
-      filter:brightness(0) invert(1);
-      background: rgba(255,255,255,0.06);
       padding:8px;
       border-radius:8px;
       transition:transform 0.2s;
+      background: rgba(255,255,255,0.1);
     }
     .faang-logos img:hover{
       transform:scale(1.1);
@@ -178,6 +208,12 @@
   </style>
 </head>
 <body>
+
+  <div class="hero-name-wrapper">
+    <h1 class="hero-name">Adam Ahmed</h1>
+    <div class="subtitle">ECPC Participant</div>
+  </div>
+
   <header class="site-header">
     <nav class="nav">
       <a href="#about" class="nav-link">About</a>
@@ -186,7 +222,7 @@
   </header>
 
   <main>
-    <!-- HERO / ABOUT (Page 1) -->
+    <!-- HERO / ABOUT -->
     <section id="about" class="section hero">
       <div class="hero-content">
         <h1 class="goal">My goal is to become a bug hunter and a software engineer.</h1>
@@ -196,12 +232,13 @@
 
         <div class="short-info">
           <h2 class="headline">About Me</h2>
-          <p>Computer Science student. Passionate about software engineering, security and algorithms (currently learning DSA).</p>
+          <p>Computer Science student. Passionate about software engineering, security and algorithms (currently learning DSA).  
+          I’m also proud to say that I participated in <strong style="color: var(--barca-yellow);">ECPC</strong> — a competition that sharpened my problem-solving and algorithmic thinking skills.</p>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS & CERTIFICATES (Page 2) -->
+    <!-- SKILLS & CERTIFICATES -->
     <section id="skills" class="section skills-section">
       <div class="container">
         <h2 class="section-title">Skills & Languages</h2>
@@ -228,12 +265,15 @@
           <li>Linux+</li>
           <li>Security+</li>
           <li>Red Teaming</li>
-          <li>RJPTv2</li>
+          <li>eJPTv2</li>
           <li>OSCP</li>
+          <li>Git</li>
+          <li>GitHub</li>
         </ul>
 
         <h2 class="section-title">Career Ambition</h2>
-        <p>I aim to be a Software Engineer at a FAANG company and I'm also active in security (I participate in ECPC). Currently learning DSA. I want to be a bug hunter and a software engineer.</p>
+        <p>I aim to be a Software Engineer at a FAANG company and I'm also active in security.  
+        Participating in ECPC helped me grow a lot, and I continue to improve through DSA and bug hunting practice.</p>
 
         <div class="faang-logos">
           <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" title="Google" />
@@ -242,17 +282,15 @@
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" title="Amazon" />
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" title="Netflix" />
         </div>
-
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© Adam Ahmed — Computer Science Student</p>
+    <p>© Adam Ahmed — Computer Science Student | ECPC Participant</p>
   </footer>
 
   <script>
-    // smooth scroll
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
